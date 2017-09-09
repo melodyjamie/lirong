@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>映射</title>
+</head>
+<body>
+	<script>
+	var arr=[12,15,14,16,18,52,19];
+	var result=map(arr,function(value){
+		return value/2;
+	})
+	console.log(result);
+	
+
+	var result=filter(arr,function(value){
+		return value%2==0;
+	})
+    console.log(result);
+	/*  映射  */
+	function map(arr,fn){
+        var newarr=[];
+        for(var i=0;i<arr.length;i++){
+            newarr[newarr.length]=fn(arr[i]);
+        }
+          return newarr;
+    }
+
+    
+
+    function filter(arr,fn){
+    	var newarr=[];
+    	for(var i=0;i<arr.length;i++){
+    		if(fn(arr[i])){
+    			newarr[newarr.length]=arr[i];
+    		}
+    	}
+    	return newarr;
+    }
+	</script>
+</body>
+</html>
