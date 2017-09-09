@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>排序</title>
+</head>
+<body>
+	<script>
+	var arr=[12,25,26,32,31,24,15,26];
+	sortUP(arr);
+	sortDown(arr);
+	
+	/*  数组升序排列 */
+		function sortUP(arr){
+			for(var i=0;i<arr.length;i++){
+				for(var j=i+1;j<arr.length;j++){
+					if(arr[j]<arr[i]){
+						var temp=arr[i];
+						    arr[i]=arr[j];
+						    arr[j]=temp;
+					}
+				}
+			}
+			console.log(arr);
+		}
+    /* 数组降序排列 */
+    function sortDown(arr){
+    	for(var i=0;i<arr.length;i++){
+    		for(var j=i+1;j<arr.length;j++){
+    			if(arr[j]>arr[i]){
+    				var temp=arr[i];
+    				arr[i]=arr[j];
+    				arr[j]=temp;
+    			}
+    		}
+    	}
+    	console.log(arr);
+    }
+	</script>
+</body>
+</html>
