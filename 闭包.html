@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*  闭包函数  */
+		function fn(){
+			var num=10;
+			return fn1;
+		  function fn1(){
+		  	num++;
+		  	return num;
+		  }
+		}
+
+		var result=fn();
+		alert(result());
+	</script>
+</body>
+</html>

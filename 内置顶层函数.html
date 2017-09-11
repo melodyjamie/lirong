@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Document</title>
+</head>
+<body>
+<script>
+   /*  内置顶层函数  */
+         /*escape()  unescape()   Number()   String()  Boolean() 
+         parseInt()    将一个字符串转换成整数
+         parseFloat()   
+         isNaN() */
+
+         let str='张三';
+         console.log(escape(str));
+         console.log(unescape('%u5F20%u4E09'));
+         console.log(Number(123));
+         console.log(Number(0b1111));  //63  
+         console.log(Number (true));    //1
+         console.log(Number (false)); //0   
+         console.log(Number (null));  //0  
+         console.log(Number (undefined)); //NaN 
+         console.log(Number(123.00));   //123
+         console.log(Number('0123'));   //123
+         console.log(Number("123.01"));   //123.01
+         console.log(Number("123px"));   //NaN
+         console.log(Number("abcd"));   //NaN
+         console.log(Number('true'));   //NaN
+         console.log(Number(''));   //0
+         /* 将字符串转换成数字，只有字符串是数字时才能转换   '0123'*/
+         console.log(Boolean(NaN));  //false     
+         console.log(Boolean(false));  //false
+         console.log(Boolean([]));  //true
+         console.log(Boolean(true));  //true
+         console.log(Boolean(undefined));  //false
+         console.log(Boolean(null));  //false
+         console.log(Boolean(''));  //false
+         console.log(Boolean(0));  //false
+         
+         console.log(parseInt('1234'));  //1234
+         console.log(parseInt('0b1111'));  //0
+         console.log(parseInt('100px'));  //100
+         console.log(parseInt('-100px'));  //-100
+         console.log(parseInt('abc100px'));  //NaN
+         /* 字符串是以数字、空格、+、-开头，从第一个数字开始、到第一个非数字结束*/
+         console.log(parseFloat('100.5px'));   //100.5
+         console.log(parseFloat('1005px'));   //1005
+</script>
+</body>
+</html>
+
+         

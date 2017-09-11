@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		/*  对象  */
+         /*let zhangsan= {};
+         console.log(typeof zhangsan);*/
+
+
+         /* 构造函数  */
+         function Person(){
+
+         }
+         let zhangsan=new Person();
+         let lisi=new Person();
+         /*  添加属性 方法  */
+        zhangsan.age = 18;
+        zhangsan.name = 'zhangsan';
+        zhangsan.sex = '男';
+        zhangsan.say = function(){
+        	alert(zhangsan.name);
+        }
+        lisi.age = 20;
+        lisi.name = 'lisi';
+        // console.log(zhangsan);
+        // 访问
+        document.write(zhangsan.name);
+        document.write(zhangsan.age);
+        document.write(zhangsan.sex);
+        zhangsan.say();
+        alert(lisi.age);
+        alert(lisi.name);
+	</script>
+</body>
+</html>
