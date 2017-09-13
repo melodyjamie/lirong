@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>myArray</title>
+</head>
+<body>
+	<script>
+	// indexOf    lastindexOf     includes(true false)
+	// reverse    join      sort   max   min       
+	// some   every   map  filter    splicecancel    spliceAdd
+	    var arr=new myArray('a','b','c',1,2,4,3,5,'d');
+	   /* console.log(arr);
+	    arr.push('z','x','c');
+	    console.log(arr);
+	    var result=arr.indexOf('b');
+	    console.log(result);
+	    var result=arr.lastIndexOf(2);
+	    console.log(result);
+	    var result=arr.includes('h');
+	    console.log(result);
+	    console.log(arr.reverse());
+	    console.log(arr.join('-'));*/
+	    // var result=arr.sortUp();
+	    // console.log(result);
+	    // arr.sortDown();
+	   /* var result=arr.sort('>');
+	    console.log(result);*/
+	    
+
+	    var arr=new myArray(1,-23,15,56,25,undefined,48,52,undefined,26);
+	    /*var result=arr.max();
+	    console.log(result); 
+	    var result=arr.min();
+        console.log(result);*/
+        /*var result=arr.some(function(value){
+            return value>0
+        });
+        console.log(result);*/
+        // var result=arr.every(function(value){
+        // 	return value>0
+        // })
+        // console.log(result);
+        /*var result=arr.map(function(value,index){
+        	return value*index
+        })
+        console.log(result);*/
+        var result=arr.filter(function(value){
+              return value%2==1;
+        })
+        console.log(result);
+        /*var result=arr.splicecancel(2,3);
+        console.log(result);
+        var result=arr.spliceAdd(2,'z','x','c');
+        console.log(result);*/
+        /*var result=arr.delNull();
+        console.log(result);*/
+	    
+
+
+		function myArray(){
+			for(let i=0;i<arguments.length;i++){
+				this[i]=arguments[i];
+			}
+			this.length=arguments.length;
+			this.push=function(){
+				for(let i=0;i<arguments.length;i++){
+					this[this.length]=arguments[i];
+					this.length++;
+				}
+			}
+			this.indexOf=function(value){
+                 for(var i=0;i<this.length;i++){
+                 	if(this[i]==value){
+                 		return i;
+                 	}
+                 }
+                 return -1;
+			}
+            this.lastIndexOf=function(value){
+                 for(var i=this.length;i>=0;i--){
+                 	if(this[i]==value){
+                         return i;
+                 	}
+                 }
+                 return -1;
+            }
+            this.includes=function(value){
+                 for(var i=0;i<this.length;i++){
+                 	if(this[i]==value){
+                 		return true;
+                 	}
+                 }
+                 return false;
+            }
+            this.reverse=function(){
+            	var newarr=[];
+            	for(let i=this.length-1;i>-1;i--){
+            		newarr[newarr.length]=this[i];
+            	}
+            	return newarr;
+            }
+            this.join=function(str){
+            	var result='';
+            	for(let i=0;i<this.length;i++){
+            		if(i<this.length-1){
+            			result+=this[i]+str;
+            		}else{
+            			result+=this[i];
+            		}
+            	}
+            	return result;
+            }
+            this.sort=function(str){
+            	if(str==null){
+            		alert(false);
+            	}
+                if(str=='>'){
+                	this.sortUp();
+                }else if(str=='<'){
+                	this.sortDown();
+                }
+                return this;
+            }
+            this.sortUp=function(){
+                for(let i=0;i<this.length;i++){
+                	for(let j=1;j<this.length;j++){
+                		if(this[j]>this[i]){
+                			var aasd=this[i];
+                			this[i]=this[j];
+                			this[j]=aasd;
+                		}
+                	}
+                	 // return this;
+                }
+                return this;
+            }
+            this.sortDown=function(){
+                for(let i=0;i<this.length;i++){
+                	for(let j=1;j<this.length;j++){
+                		if(this[j]<this[i]){
+                			var aasd=this[i];
+                			this[i]=this[j];
+                			this[j]=aasd;
+                		}
+                	}
+                	// return this;
+                }
+                return this;
+            }
+            this.max=function(){
+            	var num=this[0];
+               for(let i=0;i<this.length;i++){
+                   if(this[i]>num){
+                   	num=this[i];
+                   }
+               }
+               return num;
+            }
+            this.min=function(){
+            	var num=this[0];
+               for(let i=0;i<this.length;i++){
+                   if(this[i]<num){
+                   	num=this[i];
+                   }
+               }
+               return num;
+            }
+            this.some=function(fn){
+            	for(let i=0;i<this.length;i++){
+            		if(fn(this[i])){
+            			return true;
+            		}
+            	}
+            	return false;
+            }
+            this.every=function(fn){
+            	for(let i=0;i<this.length;i++){
+            		if(!fn(this[i])){
+            			return false;
+            		}
+            	}
+            	return true;
+            }
+            this.map=function(fn){
+            	let newarr=new myArray();
+                for(let i=0;i<this.length;i++){
+                    newarr.push(fn(this[i],i,this));
+                }
+                return newarr;
+            }
+            this.filter=function(fn){
+            	var newarr=new myArray();
+            	for(let i=0;i<this.length;i++){
+            		if(fn(this[i])){
+            			newarr.push(this[i]);
+            		}
+            	}
+            	return newarr;
+            }
+            this.splicecancel=function(pos,num){
+            	let newarr=[];
+                for(let i=0;i<this.length;i++){
+                	if(i>=pos && i<pos+num){
+                		continue;
+                	}
+                    newarr[newarr.length]=this[i];
+                }
+                return newarr;
+            }
+            this.spliceAdd=function(pos,...rest){
+            	let newarr=[];
+                for(let i=0;i<pos;i++){
+                    newarr[newarr.length]=this[i];
+                }
+                for(let i=0;i<rest.length;i++){
+                	newarr[newarr.length]=rest[i];
+                }
+                for(let i=pos;i<this.length;i++){
+                	newarr[newarr.length]=this[i];
+                }
+                return newarr;
+            }
+            this.delNull=function(){
+            	let newarr=new myArray();
+            	for(let i=0;i<this.length;i++){
+            		if(this[i]!=undefined){
+            			newarr.push(this[i]);
+            		}
+            	}
+            	return newarr;
+
+            }
+		}
+	</script>
+</body>
+</html>
