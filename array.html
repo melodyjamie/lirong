@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>array</title>
+</head>
+<body>
+	<script>
+	/*//console.dir  打印
+		function Person(){
+			this.name='zhangsan';
+			this.age=20;
+		}
+		Person.hello={
+			alert()
+		}
+		Person.prototype={
+			study:function{
+				alert('0');
+			}
+		}
+		Person.prototype.say=function(){
+			alert('说')；
+		}
+		let zhangsan=new Person;
+		console.log(zhangsan);*/
+
+		/*let arr=[1,2,3,4,5,6];
+		let result=arr.unshift('z','x','c');
+		console.log(arr);
+		console.log(result);
+		// let result=arr.pop();
+		// let result=arr.shift();
+		let result=arr.splice(1,2);
+		console.log(arr);
+		console.log(result);*/
+
+
+		// let arr=[1,2,3,4,12,30,5,6,56,12,58,16];
+		// let arr1=['z','x','c','f','e','s'];
+		// let arr2=['a','b','c','d'];
+		// let result=arr.push(...arr1);
+		// let result=arr.concat(arr1,arr2);
+		// let result=arr.join();    //1,2,3,4,5,6
+		// let result=arr.reverse();
+		// let result=arr1.sort();
+		// arr.sort(function(a,b){
+		// 	return a - b < 0
+		// })
+		// console.log(result);
+		// console.log(arr);
+       // some   every   map    filter    forEach
+       // some 只要有一个满足条件返回true
+       //forEach  仅仅实现遍历  没有返回值
+       /*let sum=0;
+       arr.forEach(function(value,index,obj){
+       	    sum+=value;
+       })
+       console.log(sum);*/
+
+
+       /*let str=arr.filter(function(value,index,obj){
+       	    return value%2==0;
+       })
+       console.log(str);*/
+
+
+       //  map
+       /*let map=arr.map(function(value,index,obj){
+       		return value+index
+       })*/
+       // let map=arr.map((value,index)=>value+index);
+       // let map=arr.map((value)=>value*2);
+       // let map=arr.map(()=>true);
+       // console.log(map);
+
+
+       
+       //箭头函数 没有arguments    不能作为构造函数
+       /*let fn=(num)=>({name:'zhangsan'});
+       let aa=(num)=>{return{name:'lisi'}};
+       console.log(fn());
+       console.log(aa());*/
+
+
+
+       //去重
+      /* let arr=[1,2,3,4,5,1,2,3];
+       let result=newarr(arr);
+       console.log(result);*/
+
+       /*function   newarr(arr){
+       	   let arr1=[];
+       	   for(let i=0;i<arr.length;i++){
+       	   	if(!arr1.includes(arr[i])){
+       	   		arr1.push(arr[i]);
+       	   	}
+       	   }
+       	   return arr1;
+       }*/
+
+       /*function newarr(arr){
+       	  let arr1=[];     	  
+       	  for(let i=0;i<arr.length;i++){
+       	  	let flag=true;
+       	  	for(let j=i+1;j<arr.length;j++){
+       	  		if(arr[i]==arr[j]){
+       	  			flag=false;
+       	  			break;
+       	  		}
+       	  	}
+       	  	if(flag){
+       	  		arr1.push(arr[i])
+       	  	}       	  	 
+       	  }
+       	 return arr1;
+       }*/
+
+       
+       /*Array.prototype.delRepeat=function(){
+       	  let arr1=[];     	  
+       	  for(let i=0;i<this.length;i++){
+       	  	let flag=true;
+       	  	for(let j=i+1;j<this.length;j++){
+       	  		if(this[i]==this[j]){
+       	  			flag=false;
+       	  			break;
+       	  		}
+       	  	}
+       	  	if(flag){
+       	  		arr1.push(this[i])
+       	  	}       	  	 
+       	  }
+       	 return arr1;
+       }
+
+       let arr=[1,2,3,5,6,8,5,2,1,3,9];
+       let result=arr.delRepeat();
+       console.log(result);*/
+
+
+	</script>
+</body>
+</html>

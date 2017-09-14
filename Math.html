@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Math</title>
+</head>
+<body>
+	<script>
+		let arr = ['a','b','c','d','e'];
+		console.log(randomArr(arr,4));
+
+		function randomArr(arr,num){
+			let newarr=[];
+			for(let i=0;i<num;i++){
+				let index=Math.floor(Math.random()*arr.length);
+				while(newarr.includes(arr[index])){
+					index=Math.floor(Math.random()*arr.length);
+				}
+				newarr.push(arr[index]);
+			}
+			return newarr;
+		}
+
+		function randomArr(arr,num){
+			let newarr=[];
+			while(newarr.length<num){
+				let index=Math.floor(Math.random()*arr.length);
+				if(!newarr.includes(arr[index])){
+					newarr.push(arr[index]);
+				}
+			}
+			return newarr;
+		}
+	</script>
+</body>
+</html>
