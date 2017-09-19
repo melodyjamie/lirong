@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>attr</title>
+</head>
+<style>
+	div{
+		width: 200px;
+		height: 200px;
+		background: red;
+	}
+	.green{
+		background: green;
+	}
+	.circle{
+		border-radius: 50%;
+	}
+</style>
+<body>
+	<div class='red'></div>
+	<script>
+		let cla=document.getElementsByTagName('div');
+		cla[0].className='green';
+		cla[0].id='circle';
+		cla[0].style.background='green';
+		cla[0].style.borderRadius='50%';
+		cla[0].style.height          //只能获取到行内样式
+		//Window方法：   只能获取样式，不能用来设置样式
+		getComputedStyle(cla[0],null);     //（cla[0]获取的对象 ,    默认值null）
+		getComputedStyle(cla[0],null).border;     //获取对象的属性
+	</script>
+</body>
+</html>

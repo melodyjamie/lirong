@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>btns</title>
+</head>
+<style>
+	main{
+		width: 1226px;
+		height: 300px;
+		border: 1px solid #000;
+		margin: 10px  auto;
+		position: relative;
+	}
+	.btn{
+		position: absolute;
+		bottom: 20px;
+		left: 50%;
+		margin-left: -60px;
+		width: 125px;
+		height: 15px;
+		list-style: none;
+	}
+	.btn li{
+		width: 15px;
+		height: 15px;
+		border-radius: 50%;
+		background: red;
+		margin-right: 10px;
+		float: left;
+		cursor: pointer;
+	}
+</style>
+<body>
+	<main>
+		<ul class="btn">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</main>
+	<script>
+		let butn=document.getElementsByClassName('btn');
+		let list=butn[0].getElementsByTagName('li');
+		// console.log(list);
+		/*for(let i=0;i<list.length;i++){
+			list[i].onclick=function(){list[i].style.background='yellow';}
+		}*/
+		let flag=true;
+		for(let i=0;i<list.length;i++){
+			list[i].onclick=function(){
+					if(flag){
+					list[i].style.background='yellow';
+					flag=false;
+				}else{
+					list[i].style.background='red';
+					flag=true;
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

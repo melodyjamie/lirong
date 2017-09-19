@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>slide</title>
+</head>
+<style>
+	button{
+		width:80px;
+		height: 40px;
+		border-radius: 10px;
+		background: #1594ed;
+		font-size: 14px;
+		color: #fff;
+		outline: none;
+	}
+	#slide{
+		width: 160px;
+		height: 300px;
+		background: #53ccef;
+		margin-top: 10px;
+		transition: 1s;
+	}
+</style>
+<body>
+	<button>slideUp</button>
+	<button>slideDown</button>
+	<button>slideToggle</button>
+	<div id="slide"></div>
+	<script>
+		let down=document.getElementsByTagName('button');
+		let slide=document.getElementById('slide');
+		/*down[0].onclick=function(){
+			slide.style.height='0px';
+		}
+		down[1].onclick=function(){
+			slide.style.height='300px';
+		}*/
+		
+		let flag=true;
+		down[2].onclick=function(){
+			if(flag){
+				slide.style.height='0px';
+				flag=false;
+			}else{
+				slide.style.height='300px';
+				flag=true;
+			}
+		}
+
+	</script>
+</body>
+</html>
