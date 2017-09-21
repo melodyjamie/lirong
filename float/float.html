@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float</title>
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #653215;
+}
+	.box{
+		width: 100px;
+		height: 100px;
+		background: red;
+		border-radius: 50%;
+		position: absolute;
+	}
+	.box1{
+		width: 50px;
+		height: 50px;
+		background: pink;
+		border-radius: 50%;
+		position: absolute;
+	}
+	.box2{
+		width: 30px;
+		height: 30px;
+		background: violet;
+		opacity: 0.5;
+		border-radius: 50%;
+		position: absolute;
+	}
+</style>
+<body>
+	<div class="box"></div>
+	<div class="box1"></div>
+	<div class="box2"></div>
+	<script src="float.js"></script>
+	<script src="兼容性.js"></script>
+	<script>
+		window.onload=function(){
+			let box=$('.box')[0];
+			let box1=$('.box1')[0];
+			let box2=$('.box2')[0];
+			let boxx=new Float(box);
+			let box1x=new Float(box1);
+			let box2x=new Float(box2);
+			boxx.move();
+			box1x.move();
+			box2x.move();
+			box.onmouseover=function(){
+				boxx.stop();
+			}
+			box.onmouseout=function(){
+				boxx.move();
+			}
+			box.onresize=function(){
+				boxx.resize();
+			}
+			box1.onmouseover=function(){
+				box1x.stop();
+			}
+			box1.onmouseout=function(){
+				box1x.move();
+			}
+			box1.onresize=function(){
+				box1x.resize();
+			}
+		}
+	</script>
+</body>
+</html>
