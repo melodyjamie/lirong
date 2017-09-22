@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>yuan</title>
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #000;
+}
+.ding{
+	width: 1px;
+	height: 1px;
+	border-radius: 50%;
+	background: #000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+.box{
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transition: all 1s;
+}
+</style>
+<body>
+<div class="ding"></div>
+	<script>
+		window.onload=function(){
+			let ding=document.querySelector('.ding');
+			circle(200,90);
+			function circle(r,num){
+			for(let i=0;i<num;i++){
+				if(i%30==0){
+					r+=50;
+				}
+				let div=document.createElement('div');
+				div.className='box';
+				let deg=360/30;
+				let rag=deg*i*Math.PI/180;
+				let lefts=r*Math.cos(rag);
+				let tops=r*Math.sin(rag);
+				let widths=Math.floor(Math.random()*60+20);
+				let R=Math.floor(Math.random()*265);
+				let G=Math.floor(Math.random()*265);
+				let B=Math.floor(Math.random()*265);
+				div.style.background='rgb('+R+','+G+','+B+')';
+				/*div.style.left=`${lefts}px`;
+				div.style.top=`${tops}px`;*/
+				// div.style.width=div.style.height=widths+'px';
+				ding.appendChild(div);
+				setTimeout(function(){
+					div.style.transitionDelay=`${i*100}ms`;
+					div.style.left=`${lefts}px`;
+					div.style.top=`${tops}px`;
+				}, 200)
+			}
+		  }
+		}
+	</script>
+</body>
+</html>

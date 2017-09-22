@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建</title>
+</head>
+<style>
+	.circle{
+		width: 50px;
+		height: 50px;
+		background: red;
+		border-radius: 50%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transition: all 2s;
+
+	}
+</style>
+<body>
+	
+	<script>
+		window.onload=function(){
+			//在页面中随机插入20个元素
+			rand(50);
+			function rand(index){
+			for(let i=0;i<index;i++){
+				let div=document.createElement('div');
+				div.className='circle';
+				let lefts=Math.floor((innerWidth-100)*Math.random());
+				let tops=Math.floor((innerHeight-100)*Math.random());
+				let widths=Math.floor(Math.random()*40+30);
+				let R=Math.floor(Math.random()*256);
+				let G=Math.floor(Math.random()*256);
+				let B=Math.floor(Math.random()*256);
+				div.style.background='rgb('+R+','+G+','+B+')';
+
+				// div.style.background=color();
+				
+				div.style.width=div.style.height=`${widths}px`;
+				// div.style.left=`${lefts}px`;
+				// div.style.top=`${tops}px`;
+				document.body.appendChild(div);	
+				setTimeout(function(){
+					div.style.transitionDelay=`${i*100}ms`;
+					// div.style.width=div.style.height=`${widths}px`;
+					div.style.left=`${lefts}px`;
+					div.style.top=`${tops}px`;
+				}, 300)
+
+			}
+		  }
+		  function color(){
+				let str='rgb(';
+				for(let i=0;i<3;i++){
+					let num=Math.floor(Math.random()*256);
+					str+=num+',';
+				}
+				str=str.slice(0,-1)+')';
+				return str;
+			}
+		}
+	</script>
+</body>
+</html>
