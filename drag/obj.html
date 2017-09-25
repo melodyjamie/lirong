@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #563214;
+}
+.box{
+	width: 100px;
+	height: 100px;
+	background: red;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+}
+</style>
+<body>
+	<div class="box"></div>
+	<script src="obj.js"></script>
+	<script>
+		let box=document.querySelector('.box');
+		let box1=new Drag(box);
+		box1.move();
+	</script>
+</body>
+</html>
