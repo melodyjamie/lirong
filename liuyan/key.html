@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>留言板</title>
+</head>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 16px;
+	font-family: sans-serif;
+}
+.box{
+	width: 400px;
+	height: 250px;
+	border-radius: 10px;
+	background: #e6b8b8;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	position: relative;
+}
+.ming{
+	width: 300px;
+	height: 30px;
+	border-radius: 10px;
+	margin: 10px 50px;
+	background: #b8e6e6;
+	opacity: 0.5;
+	color: #000;
+}
+.wenben{
+	width: 300px;
+	height: 100px;
+	background: #b8e6e6;
+	opacity: 0.5;
+	border-radius: 10px;
+	margin: 0 50px;
+	resize: none;
+}
+.wenben:focus{
+	outline: none;
+}
+.ming:focus{
+	outline: none;
+}
+.submit{
+	width: 80px;
+	height: 30px;
+	border-radius: 5px;
+	background: #b8e6e6;
+	opacity: 0.8;
+	font-size: 16px;
+	text-align: center;
+	line-height: 20px;
+}
+.submit:focus{
+	outline: none;
+}
+.box1{
+	width: 60px;
+	height: 30px;
+	border-radius: 20px;
+	line-height: 30px;
+	text-align: center;
+	background: rgba(197, 77, 183, 0.8);
+	font-size: 14px;
+	color: #000;
+	position: absolute;
+	left: 50px;
+	bottom: 30px;
+	font-size: 16px;
+}
+.liu{
+	width: 400px;
+	/* height: 100px; */
+	background: #e6b8b8;
+	margin: 0 auto;
+	border-radius: 10px;
+	margin-top: 20px;
+}
+.liu li{
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.tu{
+	width: 80px;
+	height:80px;
+	border-radius: 50%;
+	float: left;
+	margin-right: 5px;
+}
+.tu img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.masseg{
+	width: 300px;
+	height: 100px;
+	border-radius: 10px;
+	background: #fff;
+	opacity: 0.5;
+}
+.masseg>h3{
+	line-height: 30px;
+	margin-top: 15px;
+	color: #ff006a;
+}
+.masseg>p{
+	color: #3250bb;
+	font-size: 14px;
+}
+</style>
+<body>
+<div class="box">
+	<input type="text" class="ming" >
+	<textarea name="" class="wenben" id="" cols="30" rows="10" maxlength="200"></textarea>
+	<input type="submit" class="submit">
+	<div class="box1">0</div>
+</div>
+<ul class="liu">
+	<li>
+		<div class="tu"><img src="img/1.jpg" alt=""></div>
+		<div class="masseg">
+			<h3>张三</h3>
+			<p>大家好，我是张三！</p>
+		</div>
+	</li>
+</ul>
+<script src="兼容性.js"></script>
+<script src="key.js"></script>
+</body>
+</html>
